@@ -1,4 +1,4 @@
-// TODO: (주찬) 아직 작업 중인 컴포넌트입니다. [24-03-17]
+// TODO: (주찬) 아직 작업 중인 컴포넌트입니다. [24-03-30]
 
 import React, {
   createContext,
@@ -17,51 +17,52 @@ import { forwardRefWithAs } from '@utils';
 
 export const SelectActionsContext = createContext<{
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  handleSelectItem: (item: string) => void;
+  handleSelectValue: (value: string) => void;
 } | null>(null);
 SelectActionsContext.displayName = 'SelectActionsContext';
 
-const SelectDataContext = createContext<{
+export const SelectDataContext = createContext<{
   open: boolean;
-  selectedItem: string[];
+  selectedValue: null | string | string[];
 } | null>(null);
 SelectDataContext.displayName = 'SelectDataContext';
 
-export interface CommonProps {
+interface SelectRootProps {
+  value: string | string[];
+  multiple?: boolean;
   children?: React.ReactNode;
   className?: string;
+  onChange?(value: null | string | string[]): void;
 }
-type Props = {
-  selected: string[];
-  multiple?: boolean;
-  onSubmit(arg: string[]): void;
-} & CommonProps;
 const SelectRoot = ({
-  selected,
-  onSubmit,
+  value,
+  onChange,
   children,
   multiple = false,
-}: Props) => {
+}: SelectRootProps) => {
   const selectRef = useRef<HTMLDivElement>(null);
   const [open, setOpen] = useState(false);
-  const [selectedItem, setSelectedItem] = useState<string[]>(selected);
+  const [selectedValue, setSelectedValue] = useState<null | string | string[]>(
+    value,
+  );
 
-  const handleSelectItem = useCallback(
+  const handleSelectValue = useCallback(
     (item: string) => {
-      let updatedSelected;
-      const isItemSelected = selectedItem.includes(item);
+      let selectedList;
+      const itemExists = selectedValue?.includes(item);
 
-      if (multiple) {
-        updatedSelected = isItemSelected
-          ? selectedItem.filter((selectedItem) => selectedItem !== item)
-          : [...selectedItem, item];
+      if (multiple && selectedValue instanceof Array) {
+        selectedList = itemExists
+          ? selectedValue.filter((value) => value !== item)
+          : [...selectedValue, item];
       } else {
-        updatedSelected = isItemSelected ? [] : [item];
+        selectedList = itemExists ? null : item;
       }
 
-      setSelectedItem(updatedSelected);
+      setSelectedValue(selectedList);
+      onChange?.(selectedList);
     },
-    [multiple, selectedItem],
+    [multiple, selectedValue],
   );
 
   useEffect(() => {
@@ -71,7 +72,6 @@ const SelectRoot = ({
         !selectRef.current.contains(event.target as Node)
       ) {
         setOpen(false);
-        onSubmit(selectedItem);
       }
     };
 
@@ -79,22 +79,22 @@ const SelectRoot = ({
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [onSubmit, selectedItem, setOpen]);
+  }, [selectedValue]);
 
   const actions = useMemo(
     () => ({
       setOpen,
-      handleSelectItem,
+      handleSelectValue,
     }),
-    [setOpen, handleSelectItem],
+    [handleSelectValue],
   );
 
   const data = useMemo(
     () => ({
       open,
-      selectedItem,
+      selectedValue,
     }),
-    [open, selectedItem],
+    [open, selectedValue],
   );
   return (
     <SelectActionsContext.Provider value={actions}>

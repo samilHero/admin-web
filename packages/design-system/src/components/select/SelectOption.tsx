@@ -17,7 +17,7 @@ export const SelectOption = (
       ref={ref}
       className={className}
       onClick={() => {
-        actions.handleSelectItem(item);
+        actions.handleSelectValue(item);
       }}
       {...props}
     >
