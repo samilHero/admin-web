@@ -1,28 +1,20 @@
-import type { ButtonHTMLAttributes } from 'react';
+// TO DO: 버튼 작업중인 컴포넌트
+
+import { Children, type ButtonHTMLAttributes, type ReactNode } from 'react';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'text' | 'contained' | 'outlined';
-  icon?: boolean;
-  text: string;
-  backgroundColor: string;
-  disabled?: boolean;
-  onClick: () => void;
+  variant?: 'text' | 'filled' | 'outlined';
+  width: Pick<React.CSSProperties, 'width'>;
+  color: string;
+  children?: React.ReactNode;
 }
 
 export function Button({
   variant = 'text',
-  icon = false,
-  text,
-  backgroundColor,
-  disabled = false,
-  onClick,
+  width,
+  color,
+  children,
   ...props
 }: ButtonProps) {
-  return (
-    <button disabled={disabled} onClick={onClick} {...props}>
-      {/* If the icon is true, render the icon component */}
-      {/* {icon && <Icon />} */}
-      {text}
-    </button>
-  );
+  return <button {...props}>{children}</button>;
 }
