@@ -17,12 +17,15 @@
     "lint:all:fix": "pnpm lint:fix && pnpm prettier:fix && pnpm lint:style:fix",
     "dev:admin": "pnpm --filter missionary-admin dev",
     "dev:app": "pnpm --filter missionary-app dev",
-    "dev:lib": "pnpm --filter ui-library dev",
+    "dev:ds": "pnpm --filter design-system dev",
     "dev": "pnpm dev:admin & pnpm dev:app & pnpm dev:lib",
     "build:admin": "pnpm --filter missionary-admin build",
     "build:app": "pnpm --filter missionary-app build",
-    "build:lib": "pnpm --filter ui-library build",
-    "build": "pnpm build:admin & pnpm build:app & pnpm build:lib"
+    "build:ds": "pnpm --filter design-system build",
+    "build": "pnpm build:admin & pnpm build:app & pnpm build:lib",
+    "sb:admin": "pnpm --filter missionary-admin storybook",
+    "sb:app": "pnpm --filter missionary-app storybook",
+    "sb:ds": "pnpm --filter design-system storybook"
   },
   "dependencies": {
     "@emotion/react": "^11.11.3",
