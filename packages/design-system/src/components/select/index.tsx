@@ -16,7 +16,7 @@ import { SelectOption } from './SelectOption';
 import { forwardRefWithAs } from '@utils';
 import { useControllableState } from '@hooks';
 
-type ValueType = string | string[];
+type ValueType = string | string[] | undefined | null;
 export const SelectActionsContext = createContext<{
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
   handleSelectValue: (value: string) => void;
