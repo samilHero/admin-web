@@ -14,7 +14,9 @@ import { SelectSearchInput } from './SelectSearchInput';
 import { SelectOptions } from './SelectOptions';
 import { SelectOption } from './SelectOption';
 import { forwardRefWithAs } from '@utils';
+import { useControllableState } from '@hooks';
 
+type ValueType = string | string[];
 export const SelectActionsContext = createContext<{
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
   handleSelectValue: (value: string) => void;
@@ -23,28 +25,33 @@ SelectActionsContext.displayName = 'SelectActionsContext';
 
 export const SelectDataContext = createContext<{
   open: boolean;
-  selectedValue: null | string | string[];
+  selectedValue?: ValueType;
 } | null>(null);
 SelectDataContext.displayName = 'SelectDataContext';
 
 interface SelectRootProps {
-  value: string | string[];
+  defaultValue?: ValueType;
+  value?: ValueType;
   multiple?: boolean;
   children?: React.ReactNode;
   className?: string;
-  onChange?(value: null | string | string[]): void;
+  onChange?(value?: ValueType): void;
 }
 const SelectRoot = ({
-  value,
-  onChange,
+  defaultValue,
+  value: controlledValue,
+  onChange: controlledOnChange,
   children,
   multiple = false,
 }: SelectRootProps) => {
   const selectRef = useRef<HTMLDivElement>(null);
   const [open, setOpen] = useState(false);
-  const [selectedValue, setSelectedValue] = useState<null | string | string[]>(
-    value,
-  );
+  let [selectedValue = multiple ? [] : undefined, setSelectedValue] =
+    useControllableState<ValueType>(
+      controlledValue,
+      controlledOnChange,
+      defaultValue,
+    );
 
   const handleSelectValue = useCallback(
     (item: string) => {
@@ -60,7 +67,6 @@ const SelectRoot = ({
       }
 
       setSelectedValue(selectedList);
-      onChange?.(selectedList);
     },
     [multiple, selectedValue],
   );
