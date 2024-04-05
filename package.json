@@ -18,11 +18,11 @@
     "dev:admin": "pnpm --filter missionary-admin dev",
     "dev:app": "pnpm --filter missionary-app dev",
     "dev:ds": "pnpm --filter design-system dev",
-    "dev": "pnpm dev:admin & pnpm dev:app & pnpm dev:lib",
+    "dev": "pnpm dev:admin & pnpm dev:app & pnpm dev:ds",
     "build:admin": "pnpm --filter missionary-admin build",
     "build:app": "pnpm --filter missionary-app build",
     "build:ds": "pnpm --filter design-system build",
-    "build": "pnpm build:admin & pnpm build:app & pnpm build:lib",
+    "build": "pnpm build:admin & pnpm build:app & pnpm build:ds",
     "sb:admin": "pnpm --filter missionary-admin storybook",
     "sb:app": "pnpm --filter missionary-app storybook",
     "sb:ds": "pnpm --filter design-system storybook"
