@@ -1,9 +1,7 @@
 const RootLayout = ({ children }: { children: React.ReactNode }) => (
   <html lang="ko">
     <body>
-      <div>
-        <main>{children}</main>
-      </div>
+      <main>{children}</main>
     </body>
   </html>
 );
