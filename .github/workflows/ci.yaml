@@ -49,7 +49,7 @@ jobs:
         run: |
           pnpm lint
           pnpm prettier
-          pnpm lint:style
+          pnpm stylelint
 
   build:
     needs: setup-and-lint
