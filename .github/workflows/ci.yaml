@@ -73,4 +73,5 @@ jobs:
       - name: Build packages
         run: |
           pnpm install
-          pnpm build --filter ${{ matrix.package }}
+          pnpm recursive run build --filter ${{ matrix.package }}
+
