@@ -23,8 +23,6 @@
     "build:app": "pnpm --filter missionary-app build",
     "build:ds": "pnpm --filter design-system build",
     "build": "pnpm build:admin & pnpm build:app & pnpm build:ds",
-    "sb:admin": "pnpm --filter missionary-admin storybook",
-    "sb:app": "pnpm --filter missionary-app storybook",
     "sb:ds": "pnpm --filter design-system storybook"
   },
   "dependencies": {
