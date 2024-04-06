@@ -1,4 +1,3 @@
-import Input from './input';
-
-export default { Input };
+export { Input } from './input';
 export { Select } from './select';
+export { Tab } from './tab';

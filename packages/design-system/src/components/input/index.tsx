@@ -8,7 +8,7 @@ interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
   onClick: () => void;
 }
 
-const Input: React.FC<IInputProps> = React.forwardRef(
+export const Input: React.FC<IInputProps> = React.forwardRef(
   (
     { inputType = 'text', disabled, value, onChange, onClick, ...rest },
     ref: React.Ref<HTMLInputElement>,
@@ -28,5 +28,3 @@ const Input: React.FC<IInputProps> = React.forwardRef(
     );
   },
 );
-
-export default Input;
