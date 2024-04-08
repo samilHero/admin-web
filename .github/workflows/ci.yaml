@@ -49,7 +49,7 @@ jobs:
         run: |
           pnpm lint
           pnpm prettier
-          pnpm lint:style
+          pnpm stylelint
 
   build:
     needs: setup-and-lint
@@ -73,4 +73,5 @@ jobs:
       - name: Build packages
         run: |
           pnpm install
-          pnpm run build --filter ${{ matrix.package }}
+          pnpm recursive run --filter ${{ matrix.package }} build
+
