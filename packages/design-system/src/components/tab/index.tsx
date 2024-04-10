@@ -1,10 +1,10 @@
 import React from 'react';
 import { TabLayout, TabList } from './TabLayout';
 
-interface ITabProps {
-  menuList: Array<{
-    id: string;
-    title: string;
+interface TabProps {
+  list: Array<{
+    value: string;
+    label: string;
   }>;
   selectedValue: string;
   onClick: () => void;
@@ -16,15 +16,15 @@ enum TeamType {
   MISSIONARY_TEAM = 'MISSIONARY_TEAM',
 }
 
-export const Tab = ({ menuList, selectedValue, ...props }: ITabProps) => {
+export const Tab = ({ list, selectedValue, onClick }: TabProps) => {
   const categories = [
     {
-      id: TeamType.PREPARE_TEAM,
-      title: '준비팀',
+      value: TeamType.PREPARE_TEAM,
+      label: '준비팀',
     },
     {
-      id: TeamType.MISSIONARY_TEAM,
-      title: '선교팀',
+      value: TeamType.MISSIONARY_TEAM,
+      label: '선교팀',
     },
   ];
 
@@ -32,10 +32,10 @@ export const Tab = ({ menuList, selectedValue, ...props }: ITabProps) => {
     <TabLayout>
       {categories.map((category) => (
         <TabList
-          key={category.id}
-          active={category.id === TeamType.PREPARE_TEAM}
+          key={category.value}
+          active={category.value === TeamType.PREPARE_TEAM}
         >
-          {category.title}
+          {category.label}
         </TabList>
       ))}
     </TabLayout>
