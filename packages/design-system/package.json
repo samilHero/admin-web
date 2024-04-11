@@ -10,6 +10,7 @@
     "preview": "next preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
+    "lint:eslint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:styles": "stylelint \"**/*.{js,jsx,ts,tsx,css,scss}\""
   },
   "devDependencies": {
