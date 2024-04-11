@@ -5,8 +5,11 @@ export const TabLayout = styled.div`
   display: flex;
   gap: 10px;
 `;
+interface TabListProps {
+  active: boolean;
+}
 
-export const TabList = styled.div`
+export const TabList = styled.div<TabListProps>`
   background-color: #007bff;
   color: white;
   font-size: 16px;

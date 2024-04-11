@@ -7,7 +7,7 @@ interface TabProps {
     label: string;
   }>;
   selectedValue: string;
-  onClick: () => void;
+  onChange: () => void;
 }
 
 // TODO : 삭제 필요 (TeamType/categories)
@@ -16,7 +16,7 @@ enum TeamType {
   MISSIONARY_TEAM = 'MISSIONARY_TEAM',
 }
 
-export const Tab = ({ list, selectedValue, onClick }: TabProps) => {
+export const Tab = ({ list, selectedValue, onChange }: TabProps) => {
   const categories = [
     {
       value: TeamType.PREPARE_TEAM,
