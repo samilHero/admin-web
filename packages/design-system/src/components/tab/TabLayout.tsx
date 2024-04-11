@@ -12,12 +12,14 @@ interface TabListProps {
 
 export const TabList = styled.div<TabListProps>`
   background-color: ${(props) => (props.active ? '#0056b3' : '#007bff')};
-  color: #fff;
-  font-size: 16px;
+
   padding: 10px 20px;
+  font-size: 16px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+
+  color: #fff;
 
   &:hover {
     background-color: #0056b3;
