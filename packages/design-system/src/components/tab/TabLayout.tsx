@@ -11,15 +11,16 @@ interface TabListProps {
 }
 
 export const TabList = styled.div<TabListProps>`
+  padding: 10px 20px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+
   background-color: ${(props) => (props.active ? '#0056b3' : '#007bff')};
 
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-
   color: #fff;
+  font-size: 16px;
+
+  cursor: pointer;
 
   &:hover {
     background-color: #0056b3;
