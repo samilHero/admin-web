@@ -1,7 +1,7 @@
 import React from 'react';
 import type { ReactNode } from 'react';
 
-import { TooltipLayout, TooltipTrigger, TooltipText } from './ToolTipLayout';
+import { TooltipLayout, TooltipTrigger, TooltipText } from './TooltipLayout';
 
 interface TooltipProps {
   text: string;
