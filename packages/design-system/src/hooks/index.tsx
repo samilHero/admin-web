@@ -7,3 +7,4 @@ export type { ContextAction } from './useContextAction';
 export { useEvent } from './useEvent';
 export { useLatestValue } from './useLatestValue';
 export { useControllableState } from './useControllableState';
+export { useSafeContext } from './useSafeContext';
