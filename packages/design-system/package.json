@@ -21,6 +21,10 @@
     "@storybook/react": "^8.0.5",
     "@storybook/test": "^8.0.5",
     "prop-types": "^15.8.1",
+    "sass": "^1.75.0",
     "storybook": "^8.0.5"
+  },
+  "dependencies": {
+    "classnames": "^2.5.1"
   }
 }
