@@ -1,14 +1,13 @@
 import React from 'react';
-import type { ReactNode } from 'react';
 
 import { TooltipLayout, TooltipTrigger, TooltipText } from './TooltipLayout';
 
 interface TooltipProps {
   text: string;
-  children: ReactNode;
+  children: string;
 }
 
-export const Tooltip = ({ children, text }: TooltipProps) => {
+export const Tooltip = ({ text, children }: TooltipProps) => {
   return (
     <TooltipLayout>
       <TooltipTrigger>{children}</TooltipTrigger>
