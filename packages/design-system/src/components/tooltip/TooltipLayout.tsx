@@ -2,33 +2,30 @@
 
 import styled from '@emotion/styled';
 
-export const TooltipLayout = styled.div`
+export const TooltipWrapper = styled.div`
   position: relative;
   display: inline-block;
-`;
+  cursor: pointer;
 
-// 툴팁 스타일
-export const TooltipText = styled.span`
-  position: absolute;
-  bottom: 150%;
-  left: 50%;
-  z-index: 1;
-  width: 120px;
-  margin-left: -60px;
-  padding: 5px;
-  border-radius: 6px;
-  background-color: #000;
-  color: #fff;
-  text-align: center;
-  opacity: 0.1;
-  visibility: hidden;
-  transition: opacity 0.3s;
-`;
+  .tooltip-text {
+    visibility: hidden;
+    width: max-content;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+    padding: 4px 8px;
+    position: absolute;
+    z-index: 1;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
 
-// 툴팁을 나타내는 이벤트 핸들러
-export const TooltipTrigger = styled.span`
-  &:hover + ${TooltipText} {
-    opacity: 1;
+  &:hover .tooltip-text {
     visibility: visible;
+    opacity: 1;
   }
 `;

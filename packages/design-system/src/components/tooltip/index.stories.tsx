@@ -9,5 +9,5 @@ export default meta;
 type Story = StoryObj<typeof Tooltip>;
 
 export const Primary: Story = {
-  render: () => <Tooltip text={'1'} children={'1'} />,
+  render: () => <Tooltip text="This is a tooltip">Hover me</Tooltip>,
 };

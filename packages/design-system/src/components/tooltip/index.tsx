@@ -1,17 +1,16 @@
 import React from 'react';
-
-import { TooltipLayout, TooltipTrigger, TooltipText } from './TooltipLayout';
+import { TooltipWrapper } from './TooltipLayout';
 
 interface TooltipProps {
   text: string;
-  children: string;
+  children: React.ReactNode;
 }
 
 export const Tooltip = ({ text, children }: TooltipProps) => {
   return (
-    <TooltipLayout>
-      <TooltipTrigger>{children}</TooltipTrigger>
-      <TooltipText>{text}</TooltipText>
-    </TooltipLayout>
+    <TooltipWrapper>
+      {children}
+      <span className="tooltip-text">{text}</span>
+    </TooltipWrapper>
   );
 };
