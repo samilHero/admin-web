@@ -2,15 +2,15 @@ import type { ComponentType } from 'react';
 import { createContext } from 'react';
 
 interface ModalDispatchContextType {
-  open: (Component: ComponentType<any>, props: any) => void;
-  close: (Component: ComponentType<any>) => void;
+  openModal: (Component: ComponentType<any>, props: any) => void;
+  closeModal: (Component: ComponentType<any>) => void;
 }
 
 export const ModalDispatchContext = createContext<ModalDispatchContextType>({
-  open: () => {
+  openModal: () => {
     return;
   },
-  close: () => {
+  closeModal: () => {
     return;
   },
 });

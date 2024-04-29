@@ -12,13 +12,17 @@ interface ModalProviderType {
 export const ModalProvider = ({ children }: ModalProviderType) => {
   const [openedModals, setOpenedModals] = useState<Modal[]>([]);
 
-  const open = (Component: ComponentType<any>, props: any) => {
+  const openModal = (Component: ComponentType<any>, props: any) => {
+    if (openedModals.includes({ Component, props })) {
+      return;
+    }
+
     setOpenedModals((modals) => {
       return [...modals, { Component, props }];
     });
   };
 
-  const close = (Component: ComponentType<any>) => {
+  const closeModal = (Component: ComponentType<any>) => {
     setOpenedModals((modals) => {
       return modals.filter((modal) => {
         return modal.Component !== Component;
@@ -27,7 +31,7 @@ export const ModalProvider = ({ children }: ModalProviderType) => {
   };
 
   const dispatch = useMemo(() => {
-    return { open, close };
+    return { openModal, closeModal };
   }, []);
 
   return (
