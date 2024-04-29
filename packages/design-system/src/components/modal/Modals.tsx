@@ -1,10 +1,10 @@
 import { useContext } from 'react';
-import { ModalStateContext } from '../../../context/ModalStateContext';
-import { ModalDispatchContext } from '../../../context/ModalDispatchContext';
+import { ModalStateContext } from '@context/ModalStateContext';
+import { ModalDispatchContext } from '@context/ModalDispatchContext';
 
 export const Modals = () => {
   const openedModals = useContext(ModalStateContext);
-  const { close } = useContext(ModalDispatchContext);
+  const { closeModal } = useContext(ModalDispatchContext);
 
   if (openedModals.length === 0) {
     return null;
@@ -16,7 +16,7 @@ export const Modals = () => {
     const { onSubmit, ...rest } = props;
 
     const handleCloseModal = () => {
-      close(Component);
+      closeModal(Component);
     };
 
     const handleSubmit = async () => {
