@@ -1,7 +1,7 @@
-import { Checkbox } from './index';
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 import styled from '@emotion/styled';
+import { Checkbox } from '.';
 
 const Icon = styled.span<{ checked: boolean }>`
   position: relative;
@@ -37,16 +37,16 @@ export default meta;
 type Story = StoryObj<typeof Checkbox>;
 
 export const Primary: Story = {
-  render: (args) => {
-    const Story = () => {
+  render: (args) =>
+    (() => {
       const [checked, setChecked] = useState(false);
 
       return (
         <>
           <Checkbox
+            {...args}
             checked={checked}
             onChange={(newChecked) => {
-              console.log(newChecked);
               setChecked(newChecked);
             }}
             value={'value'}
@@ -56,11 +56,6 @@ export const Primary: Story = {
           </Checkbox>
         </>
       );
-    };
-
-    return <Story />;
-  },
-  args: {
-    checked: false,
-  },
+    })(),
+  args: {},
 };
