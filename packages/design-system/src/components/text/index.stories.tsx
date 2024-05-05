@@ -1,4 +1,4 @@
-import { Text } from './index';
+import { Text } from '.';
 import type { Meta, StoryObj } from '@storybook/react';
 import styled from '@emotion/styled';
 
