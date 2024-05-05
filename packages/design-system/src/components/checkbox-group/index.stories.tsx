@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 import { CheckboxGroup } from '.';
-import { Text } from '../Text';
+import { Text } from '../text';
 import styled from '@emotion/styled';
 
 const Icon = styled.span<{ checked: boolean }>`
