@@ -1,3 +1,4 @@
+import '@styles/_global.scss';
 const RootLayout = ({ children }: { children: React.ReactNode }) => (
   <html lang="ko">
     <body>
