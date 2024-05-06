@@ -9,21 +9,21 @@ export const TooltipWrapper = styled.div`
   cursor: pointer;
 
   .tooltip-text {
-    width: max-content;
-    background-color: rgba(0, 0, 0, 70%);
-
-    visibility: hidden;
     position: absolute;
-    color: #fff;
-
-    padding: 4px 8px;
     bottom: calc(100% + 8px);
     left: 50%;
-    border-radius: 4px;
     z-index: 1;
+
+    width: max-content;
+    padding: 4px 8px;
+    border-radius: 4px;
+
+    color: #fff;
     text-align: center;
 
     opacity: 0;
+    visibility: hidden;
+
     transition: opacity 0.3s;
     transform: translateX(-50%);
   }
