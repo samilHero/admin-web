@@ -1,0 +1,18 @@
+#!/bin/bash
+
+COMMIT_MSG_FILE=$1
+
+# 현재 체크아웃된 브랜치 이름 가져오기
+BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
+
+# 브랜치 이름에서 'SMH-123' 형식의 티켓 번호 추출
+if [[ $BRANCH_NAME =~ (SMH-[0-9]+) ]]; then
+    TICKET_NUMBER=${BASH_REMATCH[1]}
+fi
+
+# 커밋 메시지에 티켓 번호 삽입
+if [ ! -z "$TICKET_NUMBER" ]; then
+    if ! grep -q "$TICKET_NUMBER" "$COMMIT_MSG_FILE"; then
+        sed -i.bak -e "1s/^/[$TICKET_NUMBER] /" $COMMIT_MSG_FILE
+    fi
+fi

@@ -1,0 +1,53 @@
+
+// TODO: 디자인팀과 line-height 값 다시 정하기. 정확한 line-height 값이 나오지 않음
+:root {
+  --font-size-h1: 34px;
+  --line-height-h1: 1.235;
+  --font-size-h2: 28px;
+  --line-height-h2: 1.286;
+  --font-size-h3: 22px;
+  --line-height-h3: 1.364;
+  --font-size-h4: 20px;
+  --line-height-h4: 1.400;
+  --font-size-h5: 18px;
+  --line-height-h5: 1.278;
+  --font-size-b1: 16px;
+  --line-height-b1: 1.375;
+  --font-size-b2: 14px;
+  --line-height-b2: 1.429;
+  --font-size-b3: 12px;
+  --line-height-b3: 1.5;
+}
+
+$fontSizeH1: var(--font-size-h1);
+$lineHeightH1: var(--line-height-h1);
+$fontSizeH2: var(--font-size-h2);
+$lineHeightH2: var(--line-height-h2);
+$fontSizeH3: var(--font-size-h3);
+$lineHeightH3: var(--line-height-h3);
+$fontSizeH4: var(--font-size-h4);
+$lineHeightH4: var(--line-height-h4);
+$fontSizeH5: var(--font-size-h5);
+$lineHeightH5: var(--line-height-h5);
+$fontSizeB1: var(--font-size-b1);
+$lineHeightB1: var(--line-height-b1);
+$fontSizeB2: var(--font-size-b2);
+$lineHeightB2: var(--line-height-b2);
+$fontSizeB3: var(--font-size-b3);
+$lineHeightB3: var(--line-height-b3);
+
+@mixin _typography($typo) {
+  .typography-#{$typo} {
+    font-size: var(--font-size-#{$typo});
+    line-height: var(--line-height-#{$typo});
+  }
+}
+
+@include _typography('h1');
+@include _typography('h2');
+@include _typography('h3');
+@include _typography('h4');
+@include _typography('h5');
+@include _typography('b1');
+@include _typography('b2');
+@include _typography('b3');
