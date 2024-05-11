@@ -4,7 +4,7 @@ import '@styles/_global.scss';
 import styled from '@emotion/styled';
 
 interface InputLayoutProps {
-  active: boolean;
+  active?: boolean;
 }
 
 export const InputLayout = styled.div<InputLayoutProps>`
