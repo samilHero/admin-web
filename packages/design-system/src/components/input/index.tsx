@@ -1,14 +1,14 @@
 import React from 'react';
 import type { InputHTMLAttributes } from 'react';
 interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
-  inputType: string;
-  disabled: boolean;
-  value: string;
-  onChange: () => void;
-  onClick: () => void;
+  inputType?: string;
+  disabled?: boolean;
+  value?: string;
+  onChange?: () => void;
+  onClick?: () => void;
 }
 
-const Input: React.FC<IInputProps> = React.forwardRef(
+export const Input: React.FC<IInputProps> = React.forwardRef(
   (
     { inputType = 'text', disabled, value, onChange, onClick, ...rest },
     ref: React.Ref<HTMLInputElement>,
@@ -28,5 +28,3 @@ const Input: React.FC<IInputProps> = React.forwardRef(
     );
   },
 );
-
-export default Input;

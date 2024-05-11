@@ -8,7 +8,9 @@
     "start": "next start",
     "preview": "next preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "lint:eslint": "eslint 'src/**/*.{js,ts,tsx}'",
+    "lint:styles": "stylelint 'src/**/*.{js,jsx,ts,tsx,css,scss}'"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.2.25",
