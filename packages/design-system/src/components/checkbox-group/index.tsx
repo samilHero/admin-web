@@ -12,7 +12,7 @@ import { Checkbox } from '../checkbox';
 import {
   CheckboxGroupActionsContext,
   CheckboxGroupDataContext,
-} from './CheckboxGroupContext';
+} from './checkboxGroupContext';
 
 interface CheckboxProps
   extends Omit<
