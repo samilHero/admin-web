@@ -9,7 +9,7 @@ import { forwardRefWithAs } from '@utils';
 import { useControllableState } from '@hooks';
 
 import styled from '@emotion/styled';
-import { CheckboxGroupActionsContext } from '../checkbox-group/CheckboxGroupContext';
+import { CheckboxGroupActionsContext } from '../checkbox-group/checkboxGroupContext';
 
 const StyledInput = styled.input`
   display: none;
@@ -25,7 +25,7 @@ export const CheckboxDataContext = createContext<{
 } | null>(null);
 CheckboxDataContext.displayName = 'CheckboxDataContext';
 
-interface CheckboxProps extends Omit<HTMLProps<HTMLDivElement>, 'onChange'> {
+interface CheckboxProps extends Omit<HTMLProps<HTMLInputElement>, 'onChange'> {
   defaultChecked?: boolean;
   checked?: boolean;
   onChange?: (checked: boolean) => void;
