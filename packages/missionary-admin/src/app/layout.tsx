@@ -1,3 +1,4 @@
+import '@styles/_global.scss';
 import type { Metadata } from 'next';
 
 import { EmotionProvider } from '../lib/EmotionProvider';
