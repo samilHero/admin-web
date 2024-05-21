@@ -21,7 +21,12 @@ export const ModalProvider = ({ children }: ModalProviderType) => {
     }
 
     setOpenedModals((modals) => {
-      return [...modals, { Component, props }];
+      const isAlreadyOpen = modals.some(
+        (modal) => modal.Component === Component,
+      );
+      return isAlreadyOpen
+        ? modals
+        : [...modals, { Component, props, opened: true }];
     });
   };
 
