@@ -2,6 +2,8 @@ import { useContext } from 'react';
 import { ModalStateContext } from '@context/ModalStateContext';
 import { ModalDispatchContext } from '@context/ModalDispatchContext';
 
+export const modals = {};
+
 export const Modals = () => {
   const openedModals = useContext(ModalStateContext);
   const { closeModal } = useContext(ModalDispatchContext);
@@ -13,7 +15,7 @@ export const Modals = () => {
   return openedModals.map((modal, index) => {
     const { Component, props } = modal;
 
-    const { onSubmit, ...rest } = props;
+    const { onSubmit, ...restProps } = props;
 
     const handleCloseModal = () => {
       closeModal(Component);
@@ -31,7 +33,7 @@ export const Modals = () => {
         key={index}
         closeModal={handleCloseModal}
         onSubmit={handleSubmit}
-        {...rest}
+        {...restProps}
       />
     );
   });

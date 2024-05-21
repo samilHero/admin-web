@@ -1,7 +1,7 @@
-import type { ComponentType } from 'react';
+import type { ComponentProps, ComponentType } from 'react';
 import { useMemo, useState, type ReactNode } from 'react';
 import { ModalDispatchContext } from './ModalDispatchContext';
-import type { Modal } from './ModalStateContext';
+import type { Modal, ModalArray } from './ModalStateContext';
 import { ModalStateContext } from './ModalStateContext';
 import { Modals } from '@components/modal/Modals';
 
@@ -10,9 +10,12 @@ interface ModalProviderType {
 }
 
 export const ModalProvider = ({ children }: ModalProviderType) => {
-  const [openedModals, setOpenedModals] = useState<Modal[]>([]);
+  const [openedModals, setOpenedModals] = useState<ModalArray>([]);
 
-  const openModal = (Component: ComponentType<any>, props: any) => {
+  const openModal = <T extends React.ElementType>(
+    Component: T,
+    props: ComponentProps<T>,
+  ) => {
     if (openedModals.includes({ Component, props })) {
       return;
     }
@@ -22,7 +25,7 @@ export const ModalProvider = ({ children }: ModalProviderType) => {
     });
   };
 
-  const closeModal = (Component: ComponentType<any>) => {
+  const closeModal = <T extends React.ElementType>(Component: T) => {
     setOpenedModals((modals) => {
       return modals.filter((modal) => {
         return modal.Component !== Component;

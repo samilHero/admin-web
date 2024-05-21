@@ -1,9 +1,11 @@
-import type { Component, ComponentType, ReactNode } from 'react';
+import type { ComponentProps, ElementType } from 'react';
 import { createContext } from 'react';
 
-export interface Modal {
-  Component: ComponentType<any>;
-  props: any;
+export interface Modal<T extends React.ElementType> {
+  Component: T;
+  props: ComponentProps<T>;
 }
 
-export const ModalStateContext = createContext<Modal[]>([]);
+export type ModalArray = Modal<ElementType>[];
+
+export const ModalStateContext = createContext<ModalArray>([]);
