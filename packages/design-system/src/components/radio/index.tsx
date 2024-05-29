@@ -1,6 +1,6 @@
 'use client';
 
-// TODO: (주찬) 아직 작업 중인 컴포넌트입니다. [24-04-15]
+// TODO: (주찬) 아직 작업 중인 컴포넌트입니다. [24-05-15]
 
 import type { HTMLProps, Ref } from 'react';
 import { useContext } from 'react';
@@ -9,23 +9,23 @@ import { forwardRefWithAs } from '@utils';
 import { useControllableState } from '@hooks';
 
 import styled from '@emotion/styled';
-import { CheckboxGroupActionsContext } from '../checkbox-group/checkboxGroupContext';
+import { RadioGroupActionsContext } from '../radio-group/radioGroupContext';
 
 const StyledInput = styled.input`
   display: none;
 `;
 
-export const CheckboxActionsContext = createContext<{
+export const RadioActionsContext = createContext<{
   onChange: (checked: boolean) => void;
 } | null>(null);
-CheckboxActionsContext.displayName = 'CheckboxActionsContext';
+RadioActionsContext.displayName = 'RadioActionsContext';
 
-export const CheckboxDataContext = createContext<{
+export const RadioDataContext = createContext<{
   checked: boolean;
 } | null>(null);
-CheckboxDataContext.displayName = 'CheckboxDataContext';
+RadioDataContext.displayName = 'RadioDataContext';
 
-interface CheckboxProps extends Omit<HTMLProps<HTMLInputElement>, 'onChange'> {
+interface RadioProps extends Omit<HTMLProps<HTMLInputElement>, 'onChange'> {
   defaultChecked?: boolean;
   checked?: boolean;
   onChange?: (checked: boolean) => void;
@@ -36,7 +36,7 @@ interface CheckboxProps extends Omit<HTMLProps<HTMLInputElement>, 'onChange'> {
   children?: React.ReactNode;
   ref?: React.Ref<HTMLInputElement>;
 }
-export const Checkbox = forwardRefWithAs(
+export const Radio = forwardRefWithAs(
   (
     {
       defaultChecked = false,
@@ -48,12 +48,11 @@ export const Checkbox = forwardRefWithAs(
       children,
       name,
       ...props
-    }: CheckboxProps,
+    }: RadioProps,
     ref?: Ref<HTMLInputElement>,
   ) => {
     // useSafeContext를 사용하지 않습니다. Checkbox 단독으로 사용할 경우 groupActions는 undefined이어야합니다.
-    const groupActions = useContext(CheckboxGroupActionsContext);
-
+    const groupActions = useContext(RadioGroupActionsContext);
     let [checked, onChange] = useControllableState<boolean>(
       controlledChecked,
       controlledOnChange,
@@ -74,20 +73,20 @@ export const Checkbox = forwardRefWithAs(
     );
 
     const handleClick = () => {
-      onChange?.(!checked);
+      onChange?.(true);
       if (value && groupActions) {
-        groupActions.updateCheckedValue?.(value);
+        groupActions.changeValue?.(value);
       }
     };
 
     return (
-      <CheckboxActionsContext.Provider value={actions}>
-        <CheckboxDataContext.Provider value={data}>
+      <RadioActionsContext.Provider value={actions}>
+        <RadioDataContext.Provider value={data}>
           {/* TODO: Input 컴포넌트로 변경 */}
           <StyledInput
             readOnly
-            type="checkbox"
-            role="checkbox"
+            type="radio"
+            role="radio"
             ref={ref}
             checked={checked}
             value={value}
@@ -101,8 +100,8 @@ export const Checkbox = forwardRefWithAs(
           >
             {children}
           </div>
-        </CheckboxDataContext.Provider>
-      </CheckboxActionsContext.Provider>
+        </RadioDataContext.Provider>
+      </RadioActionsContext.Provider>
     );
   },
 );
