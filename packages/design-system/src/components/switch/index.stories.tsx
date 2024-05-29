@@ -15,12 +15,11 @@ const StyledSwitch = styled(Switch)<{ checked: boolean }>`
 
   width: 60px;
   height: 34px;
-
-  cursor: pointer;
-
   border-radius: 34px;
 
   background-color: #ccd3e0;
+
+  cursor: pointer;
 
   &:hover {
     background: #667ba3;
