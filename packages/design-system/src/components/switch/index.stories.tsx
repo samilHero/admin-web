@@ -12,12 +12,13 @@ const SwitchContainer = styled.div`
 const StyledSwitch = styled(Switch)<{ checked: boolean }>`
   position: relative;
   display: inline-block;
+
   width: 60px;
+  height: 34px;
 
   cursor: pointer;
 
   border-radius: 34px;
-  height: 34px;
 
   background-color: #ccd3e0;
 
