@@ -40,7 +40,7 @@ export const Input: React.FC<IInputProps> = React.forwardRef(
             {...rest}
           />
           {error && <IconInputError />}
-          <IconInputReset onClick={() => onReset()} />
+          <IconInputReset onClick={() => onReset} />
         </InputBox>
         {error && <InputError>에러 메세지</InputError>}
       </InputLayout>
