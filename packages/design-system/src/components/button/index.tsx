@@ -1,20 +1,32 @@
-// TO DO: 버튼 작업중인 컴포넌트
+import { type ButtonHTMLAttributes } from 'react';
+import type { ButtonColorMap } from './ButtonLayout';
+import { ButtonWrapper } from './ButtonLayout';
 
-import { Children, type ButtonHTMLAttributes, type ReactNode } from 'react';
-
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'text' | 'filled' | 'outlined';
-  width: Pick<React.CSSProperties, 'width'>;
-  color: string;
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: 'filled' | 'outline';
+  width: React.CSSProperties['width'];
+  size: 'sm' | 'md' | 'lg' | 'xlg' | 'xxlg';
+  color?: keyof typeof ButtonColorMap;
   children?: React.ReactNode;
 }
 
 export function Button({
-  variant = 'text',
+  variant = 'filled',
   width,
-  color,
+  size,
+  color = 'primary',
   children,
   ...props
 }: ButtonProps) {
-  return <button {...props}>{children}</button>;
+  return (
+    <ButtonWrapper
+      variant={variant}
+      width={width}
+      size={size}
+      color={color}
+      {...props}
+    >
+      {children}
+    </ButtonWrapper>
+  );
 }
