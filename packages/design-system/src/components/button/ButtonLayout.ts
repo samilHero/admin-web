@@ -67,7 +67,7 @@ export const ButtonWrapper = styled.button<ButtonProps>(
     borderRadius: '8px',
   },
   ({ width }) => css`
-    width: ${width};
+    width: ${width}px;
   `,
   ({ size }) => ButtonSizeMap[size],
   ({ variant, color }) =>
