@@ -18,13 +18,14 @@ const ButtonSizeMap = {
   `,
   xxlg: css`
     height: 56px;
-    border-radius: 0px;
+    border-radius: 0;
   `,
 };
 
 export const ButtonColorMap = {
   primary: css`
     background-color: ${colors.primary20};
+
     color: ${colors.white};
 
     &:hover {
@@ -37,12 +38,14 @@ export const ButtonColorMap = {
 
     &:disabled {
       background-color: ${colors.primary60};
+
       color: ${colors.primary80};
     }
   `,
 
   secondary: css`
     background-color: ${colors.secondary50};
+
     color: ${colors.white};
 
     &:hover {
@@ -55,6 +58,7 @@ export const ButtonColorMap = {
 
     &:disabled {
       background-color: ${colors.secondary80};
+
       color: ${colors.secondary70};
     }
   `,
@@ -75,7 +79,9 @@ export const ButtonWrapper = styled.button<ButtonProps>(
       ? ButtonColorMap[color]
       : css`
           border: 1px solid ${colors.primary20};
+
           background-color: ${colors.white};
+
           color: ${colors.primary20};
 
           &:hover {
@@ -88,7 +94,9 @@ export const ButtonWrapper = styled.button<ButtonProps>(
 
           &:disabled {
             border: 1px solid ${colors.primary70};
+
             color: ${colors.primary70};
+
             cursor: not-allowed;
           }
         `,
