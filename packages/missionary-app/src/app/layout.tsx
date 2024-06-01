@@ -1,3 +1,6 @@
+import '@styles/_global.scss';
+import type { Metadata } from 'next';
+
 const RootLayout = ({ children }: { children: React.ReactNode }) => (
   <html lang="ko">
     <body>
@@ -7,3 +10,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => (
 );
 
 export default RootLayout;
+
+export const metadata: Metadata = {
+  title: '선교 어플리케이션',
+};

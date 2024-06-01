@@ -9,6 +9,7 @@
     "start": "next start",
     "preview": "next preview"
   },
-  "dependencies": {
+  "devDependencies": {
+    "sass": "^1.75.0"
   }
 }
