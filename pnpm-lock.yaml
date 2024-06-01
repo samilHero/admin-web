@@ -166,13 +166,13 @@ importers:
     devDependencies:
       sass:
         specifier: ^1.75.0
-        version: 1.75.0
+        version: 1.76.0
 
   packages/missionary-app:
     devDependencies:
       sass:
         specifier: ^1.75.0
-        version: 1.75.0
+        version: 1.76.0
 
 packages:
 
