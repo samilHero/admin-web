@@ -1,16 +1,16 @@
 import React from 'react';
 import type { InputHTMLAttributes } from 'react';
 import { InputLayout, InputBox, InputError } from './InputLayout';
-import { IconInputError, IconInputReset } from '@assets/icons/index'; // icons 디렉토리의 index 파일에서 export한 컴포넌트를 불러옵니다.
+import { IconInputError, IconInputReset } from '@assets/icons'; // icons 디렉토리의 index 파일에서 export한 컴포넌트를 불러옵니다.
 
 interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
   inputType: string;
   disabled?: boolean;
   value: string;
   error?: string;
-  onChange: () => void;
-  onClick: () => void;
-  onReset: () => void;
+  onChange?: () => void;
+  onClick?: () => void;
+  onReset?: () => void;
 }
 
 export const Input: React.FC<IInputProps> = React.forwardRef(

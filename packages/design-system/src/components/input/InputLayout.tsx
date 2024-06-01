@@ -1,6 +1,3 @@
-'use client';
-
-import '@styles/_global.scss';
 import styled from '@emotion/styled';
 
 interface InputLayoutProps {
