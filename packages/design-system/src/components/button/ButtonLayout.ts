@@ -1,6 +1,6 @@
 import styled from '@emotion/styled/macro';
 import { css } from '@emotion/react';
-import { colors } from '@styles/_color';
+import { colors } from '@styles/color';
 import type { ButtonProps } from '.';
 
 const ButtonSizeMap = {
