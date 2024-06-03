@@ -16,8 +16,8 @@ export const TabList = styled.div<TabListProps>`
     props.active ? '1px solid ' + colors.primary20 : '0'};
 
   color: ${(props) => (props.active ? colors.primary20 : colors.primary70)};
-  font-size: 16px;
   font-weight: 700;
+  font-size: 16px;
   line-height: 22px;
   text-align: center;
 
