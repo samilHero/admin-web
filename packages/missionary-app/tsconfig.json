@@ -1,6 +1,11 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src"
+    "baseUrl": "./src",
+    "paths": {
+      "@*": [
+        "../../design-system/src/*"
+      ]
+    }
   },
   "extends": "../../tsconfig.base.json",
   "include": [

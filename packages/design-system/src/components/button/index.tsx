@@ -9,7 +9,6 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   width: React.CSSProperties['width'];
   size: 'sm' | 'md' | 'lg' | 'xlg' | 'xxlg';
   color?: keyof typeof ButtonColorMap;
-  children?: React.ReactNode;
 }
 
 export function Button({

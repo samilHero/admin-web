@@ -1,7 +1,7 @@
 import '@styles/_global.scss';
 import type { Metadata } from 'next';
 
-import { EmotionProvider } from '../lib/EmotionProvider';
+import { EmotionProvider } from 'lib/EmotionProvider';
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (

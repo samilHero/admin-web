@@ -1,8 +1,13 @@
 {
-  "compilerOptions": {
-    "baseUrl": "./src"
-  },
   "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@*": [
+        "../../design-system/src/*"
+      ]
+    }
+  },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
