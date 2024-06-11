@@ -1,3 +1,5 @@
+'use client';
+
 import { type ButtonHTMLAttributes } from 'react';
 import type { ButtonColorMap } from './ButtonLayout';
 import { ButtonWrapper } from './ButtonLayout';

@@ -18,9 +18,6 @@
         "name": "next"
       }
     ],
-    "paths": {
-      "@*": ["./node_modules/@samilhero/design-system/src/*"]
-    },
     "types": ["@emotion/react/types/css-prop"]
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

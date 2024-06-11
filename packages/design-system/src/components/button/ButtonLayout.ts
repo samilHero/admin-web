@@ -1,4 +1,4 @@
-import styled from '@emotion/styled/macro';
+import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { colors } from '@styles/color';
 import type { ButtonProps } from '.';

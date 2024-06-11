@@ -5,11 +5,11 @@ const nextConfig = {
     emotion: true,
   },
   webpack: (config) => {
-    config.module.rules.push({ // 웹팩설정에 로더 추가함
+    config.module.rules.push({
       test: /\.svg$/,
       use: ['@svgr/webpack'],
     });
-    return config
+    return config;
   },
 };
 
