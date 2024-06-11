@@ -170,9 +170,6 @@ importers:
       sass:
         specifier: ^1.75.0
         version: 1.76.0
-      tsconfig-paths-webpack-plugin:
-        specifier: ^4.1.0
-        version: 4.1.0
 
   packages/missionary-app:
     devDependencies:
