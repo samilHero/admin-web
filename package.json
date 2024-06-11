@@ -15,6 +15,7 @@
     "stylelint:fix": "stylelint './packages/**/src/**/*.{tsx,ts,js}' --fix",
     "lint:all": "pnpm lint && pnpm prettier && pnpm stylelint",
     "lint:fix:all": "pnpm lint:fix && pnpm prettier:fix && pnpm stylelint:fix",
+    "type-check": "tsc --noEmit -p packages/design-system && tsc --noEmit -p packages/missionary-admin && tsc --noEmit -p packages/missionary-app",
     "dev:admin": "pnpm --filter missionary-admin dev",
     "dev:app": "pnpm --filter missionary-app dev",
     "dev:ds": "pnpm --filter design-system dev",
