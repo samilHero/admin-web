@@ -9,6 +9,9 @@
     "start": "next start",
     "preview": "next preview"
   },
+  "dependencies": {
+    "@samilhero/design-system": "workspace:*"
+  },
   "devDependencies": {
     "sass": "^1.75.0"
   }
