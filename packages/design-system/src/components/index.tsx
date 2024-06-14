@@ -1,10 +1,5 @@
 export { Input } from './input';
 export { Tooltip } from './tooltip';
-export { Select } from './select';
 export { Tab } from './tab';
 export { Text } from './text';
-export { Checkbox } from './checkbox';
-export { CheckboxGroup } from './checkbox-group';
-export { Radio } from './radio';
-export { RadioGroup } from './radio-group';
 export { Button } from './button';

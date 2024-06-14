@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 import styled from '@emotion/styled';
-import { Radio } from '.';
+import { HLRadio } from '.';
 
 const RadioWrapper = styled.div`
   display: flex;
 `;
 
-const RadioStyled = styled(Radio)`
+const RadioStyled = styled(HLRadio)`
   display: flex;
   align-items: center;
 
@@ -55,17 +55,17 @@ const Icon = styled.span<{ checked: boolean }>`
   `}
 `;
 
-const meta: Meta<typeof Radio> = {
-  component: Radio,
+const meta: Meta<typeof HLRadio> = {
+  component: HLRadio,
 };
 
 export default meta;
-type Story = StoryObj<typeof Radio>;
+type Story = StoryObj<typeof HLRadio>;
 
 const RadioComponent = ({
   args,
 }: {
-  args: React.ComponentProps<typeof Radio>;
+  args: React.ComponentProps<typeof HLRadio>;
 }) => {
   const [checked, setChecked] = useState(false);
 

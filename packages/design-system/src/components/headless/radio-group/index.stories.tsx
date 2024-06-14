@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
-import { RadioGroup } from '.';
-import { Text } from '../text';
+import { HLRadioGroup } from '.';
+import { Text } from '@components';
 import styled from '@emotion/styled';
-import { Radio } from '../radio';
+import { HLRadio } from '../radio';
 
 const RadioGroupContainer = styled.div`
   display: flex;
@@ -17,7 +17,7 @@ const RadioItemsContainer = styled.div`
   gap: 1em;
 `;
 
-const RadioGroupStyled = styled(RadioGroup)`
+const RadioGroupStyled = styled(HLRadioGroup)`
   > div {
     display: flex;
     flex-direction: column;
@@ -80,17 +80,17 @@ const Icon = styled.span<{ checked: boolean }>`
 
 const dataList = ['짜장면', '짬뽕', '탕수육'];
 
-const meta: Meta<typeof RadioGroup> = {
-  component: RadioGroup,
+const meta: Meta<typeof HLRadioGroup> = {
+  component: HLRadioGroup,
 };
 
 export default meta;
-type Story = StoryObj<typeof RadioGroup>;
+type Story = StoryObj<typeof HLRadioGroup>;
 
 const RadioGroupComponent = ({
   args,
 }: {
-  args: React.ComponentProps<typeof RadioGroup>;
+  args: React.ComponentProps<typeof HLRadioGroup>;
 }) => {
   const [checked, setChecked] = useState<string>(dataList[1]);
 
@@ -106,10 +106,10 @@ const RadioGroupComponent = ({
         >
           <div>
             {dataList.map((data) => (
-              <Radio key={data} value={data} className="radio-item">
+              <HLRadio key={data} value={data} className="radio-item">
                 <Icon checked={checked === data} className="radio-icon" />
                 {data}
-              </Radio>
+              </HLRadio>
             ))}
           </div>
         </RadioGroupStyled>

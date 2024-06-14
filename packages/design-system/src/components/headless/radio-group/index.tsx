@@ -86,4 +86,4 @@ const RadioGroupRoot = (
   );
 };
 
-export const RadioGroup = forwardRefWithAs(RadioGroupRoot);
+export const HLRadioGroup = forwardRefWithAs(RadioGroupRoot);

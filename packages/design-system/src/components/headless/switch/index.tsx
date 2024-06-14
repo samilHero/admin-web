@@ -32,7 +32,7 @@ interface SwitchProps {
 
   focus?: boolean;
 }
-export const Switch = forwardRefWithAs(
+export const HLSwitch = forwardRefWithAs(
   (
     {
       defaultChecked = false,

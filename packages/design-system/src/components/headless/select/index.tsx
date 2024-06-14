@@ -115,7 +115,7 @@ const SelectRoot = ({
   );
 };
 
-export const Select = Object.assign(SelectRoot, {
+export const HLSelect = Object.assign(SelectRoot, {
   Trigger: forwardRefWithAs(SelectTrigger),
   SearchInput: forwardRefWithAs(SelectSearchInput),
   Options: forwardRefWithAs(SelectOptions),

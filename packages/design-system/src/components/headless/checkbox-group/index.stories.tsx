@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
-import { CheckboxGroup } from '.';
-import { Text } from '../text';
+import { HLCheckboxGroup } from '.';
+import { Text } from '@components';
 import styled from '@emotion/styled';
 
 const Icon = styled.span<{ checked: boolean }>`
@@ -30,12 +30,12 @@ const Icon = styled.span<{ checked: boolean }>`
   `}
 `;
 
-const meta: Meta<typeof CheckboxGroup> = {
-  component: CheckboxGroup,
+const meta: Meta<typeof HLCheckboxGroup> = {
+  component: HLCheckboxGroup,
 };
 
 export default meta;
-type Story = StoryObj<typeof CheckboxGroup>;
+type Story = StoryObj<typeof HLCheckboxGroup>;
 
 export const Primary: Story = {
   render: (args) =>
@@ -58,7 +58,7 @@ export const Primary: Story = {
             }}
           >
             <Text typo="h2">제어 컴포넌트</Text>
-            <CheckboxGroup
+            <HLCheckboxGroup
               {...args}
               checkedValues={checked}
               onChange={(newChecked) => {
@@ -73,16 +73,16 @@ export const Primary: Story = {
                   gap: '1em',
                 }}
               >
-                <CheckboxGroup.Item value={'value1'}>
+                <HLCheckboxGroup.Item value={'value1'}>
                   <Icon checked={checked.includes('value1')} />
                   Checkbox1
-                </CheckboxGroup.Item>
-                <CheckboxGroup.Item value={'value2'}>
+                </HLCheckboxGroup.Item>
+                <HLCheckboxGroup.Item value={'value2'}>
                   <Icon checked={checked.includes('value2')} />
                   Checkbox2
-                </CheckboxGroup.Item>
+                </HLCheckboxGroup.Item>
               </div>
-            </CheckboxGroup>
+            </HLCheckboxGroup>
           </div>
         </div>
       );

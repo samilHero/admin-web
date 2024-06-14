@@ -1,9 +1,10 @@
-import { Button, Checkbox } from '@samilhero/design-system';
+import { Button } from '@samilhero/design-system';
+import { HLCheckbox } from '@components/headless';
 
 export default function Home() {
   return (
     <main>
-      <Checkbox>체크박스입니다.</Checkbox>
+      <HLCheckbox>체크박스입니다.</HLCheckbox>
       <Button size="md" width={100}>
         버튼입니다.
       </Button>

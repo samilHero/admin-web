@@ -8,7 +8,7 @@ import React, { useMemo } from 'react';
 import { forwardRefWithAs } from '@utils';
 import { useControllableState } from '@hooks';
 
-import { Checkbox } from '../checkbox';
+import { HLCheckbox } from '../checkbox';
 import {
   CheckboxGroupActionsContext,
   CheckboxGroupDataContext,
@@ -92,9 +92,9 @@ const CheckboxGroupRoot = (
   );
 };
 
-export const CheckboxGroup = Object.assign(
+export const HLCheckboxGroup = Object.assign(
   forwardRefWithAs(CheckboxGroupRoot),
   {
-    Item: Checkbox,
+    Item: HLCheckbox,
   },
 );

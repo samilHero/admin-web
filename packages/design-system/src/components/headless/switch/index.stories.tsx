@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 import styled from '@emotion/styled';
-import { Switch } from '.';
+import { HLSwitch } from '.';
 
 const SwitchContainer = styled.div`
   position: relative;
@@ -9,7 +9,7 @@ const SwitchContainer = styled.div`
   align-items: center;
 `;
 
-const StyledSwitch = styled(Switch)<{ checked: boolean }>`
+const StyledSwitch = styled(HLSwitch)<{ checked: boolean }>`
   position: relative;
   display: inline-block;
 
@@ -67,12 +67,12 @@ const Slider = styled.span<{ checked: boolean }>`
   `}
 `;
 
-const meta: Meta<typeof Switch> = {
-  component: Switch,
+const meta: Meta<typeof HLSwitch> = {
+  component: HLSwitch,
 };
 
 export default meta;
-type Story = StoryObj<typeof Switch>;
+type Story = StoryObj<typeof HLSwitch>;
 
 export const Primary: Story = {
   render: (args) =>
