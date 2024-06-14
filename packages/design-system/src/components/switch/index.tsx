@@ -1,3 +1,5 @@
+'use client';
+
 import React, { createContext, type Ref, useMemo } from 'react';
 import styled from '@emotion/styled';
 import { useControllableState } from '@hooks';

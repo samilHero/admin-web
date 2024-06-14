@@ -11,6 +11,7 @@
     "preview": "next preview"
   },
   "dependencies": {
+    "@samilhero/design-system": "workspace:*",
     "axios": "^1.6.8"
   },
   "devDependencies": {

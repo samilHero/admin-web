@@ -3,7 +3,7 @@
     "baseUrl": "./src",
     "paths": {
       "@*": [
-        "./*"
+        "../../design-system/src/*"
       ]
     }
   },
@@ -13,5 +13,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
   ]
 }
