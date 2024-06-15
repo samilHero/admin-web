@@ -1,28 +1,25 @@
 'use client';
 
 import styled from '@emotion/styled';
+import { colors } from '@styles/color';
 
 export const TabLayout = styled.div`
   display: flex;
-  gap: 10px;
 `;
 interface TabListProps {
   active: boolean;
 }
 
 export const TabList = styled.div<TabListProps>`
-  padding: 10px 20px;
-  border: 1px solid transparent;
-  border-radius: 5px;
+  padding: 10px;
+  border-bottom: ${(props) =>
+    props.active ? '1px solid ' + colors.primary20 : '0'};
 
-  background-color: ${(props) => (props.active ? '#0056b3' : '#007bff')};
-
-  color: #fff;
+  color: ${(props) => (props.active ? colors.primary20 : colors.primary70)};
+  font-weight: 700;
   font-size: 16px;
+  line-height: 22px;
+  text-align: center;
 
   cursor: pointer;
-
-  &:hover {
-    background-color: #0056b3;
-  }
 `;
