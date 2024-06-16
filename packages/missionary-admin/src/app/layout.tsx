@@ -1,14 +1,14 @@
 import '@styles/_global.scss';
 import type { Metadata } from 'next';
 
-import { EmotionProvider } from 'lib/EmotionProvider';
+import { Provider } from 'lib/Provider';
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
-      <EmotionProvider>
+      <Provider>
         <body>{children}</body>
-      </EmotionProvider>
+      </Provider>
     </html>
   );
 };
