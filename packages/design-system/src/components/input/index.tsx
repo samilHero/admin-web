@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import type { InputHTMLAttributes } from 'react';
 import { InputLayout, InputBox, InputError } from './InputLayout';

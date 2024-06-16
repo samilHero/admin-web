@@ -26,7 +26,7 @@ export const Primary: Story = {
           label: '선교팀',
         },
       ]}
-      selectedValue={''}
+      selectedValue={TeamType.PREPARE_TEAM}
       onChange={() => null}
     />
   ),

@@ -1,3 +1,5 @@
+'use client';
+
 import type { ComponentProps, ElementType } from 'react';
 import { createContext } from 'react';
 

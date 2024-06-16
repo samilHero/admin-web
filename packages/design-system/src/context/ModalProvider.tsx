@@ -1,3 +1,5 @@
+'use client';
+
 import type { ComponentProps, ComponentType } from 'react';
 import { useMemo, useState, type ReactNode } from 'react';
 import { ModalDispatchContext } from './ModalDispatchContext';

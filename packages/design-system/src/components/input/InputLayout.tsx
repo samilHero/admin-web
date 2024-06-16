@@ -1,6 +1,7 @@
 'use client';
 
 import styled from '@emotion/styled';
+import { colors } from '@styles/color';
 
 interface InputLayoutProps {
   active?: boolean;
@@ -19,28 +20,28 @@ export const InputBox = styled.div<InputLayoutProps>`
   padding: 13px 16px;
   border-radius: 8px;
 
-  background-color: var(--gray98);
+  background-color: ${colors.gray98};
 
-  color: var(--black);
+  color: ${colors.black};
 
   input {
     border: 0;
 
-    background-color: var(--gray98);
+    background-color: ${colors.gray98};
 
     &:focus {
       outline: none;
     }
 
     &::placeholder {
-      color: var(--gray70);
+      color: ${colors.gray70};
     }
   }
 
   input[disabled] {
-    background-color: var(--gray95);
+    background-color: ${colors.gray95};
 
-    color: var(--primary70);
+    color: ${colors.primary70};
   }
 
   svg {
@@ -53,6 +54,6 @@ export const InputBox = styled.div<InputLayoutProps>`
 export const InputError = styled.div<InputLayoutProps>`
   margin-top: 5px;
 
-  color: var(--error40);
+  color: ${colors.error40};
   font-size: 12px;
 `;
