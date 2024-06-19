@@ -10,12 +10,14 @@ interface InputLayoutProps {
 export const InputLayout = styled.div<InputLayoutProps>`
   display: flex;
   flex-direction: column;
+
+  width: 100%;
 `;
 
 export const InputBox = styled.div<InputLayoutProps>`
   display: flex;
 
-  width: 320px;
+  width: calc(100% - 32px);
   height: 20px;
   padding: 13px 16px;
   border-radius: 8px;

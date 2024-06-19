@@ -19,5 +19,4 @@ const createApiInstance = (
   });
 };
 
-// TODO: 적절한 환경변수를 사용하도록 수정
 export default createApiInstance(process.env.NEXT_PUBLIC_PROXY_API_URL ?? '');
