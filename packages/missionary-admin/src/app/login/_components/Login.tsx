@@ -1,6 +1,7 @@
 'use client';
 
-import React, { ChangeEvent } from 'react';
+import type { ChangeEvent } from 'react';
+import React from 'react';
 import { Button, Input } from '@samilhero/design-system';
 import { useLoginMutation } from 'queries/useAdminQuery';
 import { css } from '@emotion/react';
