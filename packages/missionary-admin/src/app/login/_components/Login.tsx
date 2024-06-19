@@ -1,18 +1,25 @@
 'use client';
 
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 import { Button, Input } from '@samilhero/design-system';
 import { useLoginMutation } from 'queries/useAdminQuery';
 import { css } from '@emotion/react';
 import { IconLogo } from 'styles/icons';
+import { useLoginHandler } from '../_hooks/useLoginHandler';
 
 export default function Login() {
-  const { mutateAsync: mutateAsyncLogin } = useLoginMutation();
+  const {
+    mutateAsync: mutateAsyncLogin,
+    isSuccess: isSuccessLogin,
+    isError: isErrorLogin,
+    data: dataLogin,
+  } = useLoginMutation();
+  const { loginId, setLoginId, password, setPassword } = useLoginHandler();
 
-  const handleLogin = () => {
-    mutateAsyncLogin({
-      loginId: 'admin_test',
-      password: 'samil123!@#',
+  const handleLogin = async () => {
+    await mutateAsyncLogin({
+      loginId,
+      password,
     });
   };
 
@@ -31,7 +38,6 @@ export default function Login() {
           flexWrap: 'wrap',
           justifyContent: 'center',
           width: '400px',
-          border: '1px solid #ccc',
         })}
       >
         {/* <IconLogo /> */}
@@ -69,12 +75,20 @@ export default function Login() {
             gap: '12px',
           })}
         >
-          <Input value="" placeholder="관리자 아이디" onChange={() => null} />
+          <Input
+            value={loginId}
+            placeholder="관리자 아이디"
+            onChange={(e: ChangeEvent<HTMLInputElement>) =>
+              setLoginId(e.target.value)
+            }
+          />
           <Input
             type="password"
-            value=""
+            value={password}
             placeholder="비밀번호"
-            onChange={() => null}
+            onChange={(e: ChangeEvent<HTMLInputElement>) =>
+              setPassword(e.target.value)
+            }
           />
 
           <Button width={'400'} size={'md'} onClick={handleLogin}>
